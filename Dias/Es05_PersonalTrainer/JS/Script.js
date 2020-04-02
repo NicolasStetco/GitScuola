@@ -4,6 +4,16 @@ $(document).ready(function(){
 
     $("#sceltatitoli").change(function(){
       alert(this.value);
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("eserciziDaTitolo").innerHTML = this.responseText;
+      }
+      };
+      var dati="?titolo='"+this.value+"'";
+      xhttp.open("GET", "visualizzaEserciziDaTitolo.php"+dati, true);
+      xhttp.send();
+
     });
 
 
