@@ -55,7 +55,7 @@
                 <option value="Intermedio">Intermedio</option>
                 <option value="Avanzato">Avanzato</option>
             </select>
-            
+            <div id="eserciziDaTitolo"></div>
         </div>
         
     
