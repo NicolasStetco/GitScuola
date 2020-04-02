@@ -3,7 +3,7 @@ $(document).ready(function(){
     visualizzaEsercizi();
 
     $("#sceltatitoli").change(function(){
-      alert(this.value);
+      //alert(this.value);
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -16,8 +16,14 @@ $(document).ready(function(){
 
     });
 
+    
+
 
   });
+
+  function avviaAllenamento(){
+      
+  }
 
   function visualizzaEsercizi() {
     var xhttp = new XMLHttpRequest();
