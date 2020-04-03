@@ -49,6 +49,8 @@ $result = $db->query('SELECT * FROM esercizi');
 echo "</table>";
 echo "</br>";
 echo "</br>";
+echo "<button onClick='avviaAllenamento()' id='avviaAllenamento'>AVVIA ALLENAMENTO</button><br/>";
+;
 $db = null;  
 
 ?>
