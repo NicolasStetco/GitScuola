@@ -15,6 +15,8 @@ $db = new PDO('sqlite:ginnastica.sqlite3');
 
 $titolo = $_GET['titolo'];
 
+echo "</br>";
+
 //echo $titolo;
 echo "<table>";
 echo "<tr class='header'><td>ID esercizi</td>";
@@ -49,8 +51,8 @@ $result = $db->query('SELECT * FROM esercizi');
 echo "</table>";
 echo "</br>";
 echo "</br>";
-echo "<button onClick='avviaAllenamento()' id='avviaAllenamento'>AVVIA ALLENAMENTO</button><br/>";
-;
+
+//echo '<input type="button" value="Inizia allenamento ' . $titolo . '" id="btnInizia">';
 $db = null;  
 
 ?>
