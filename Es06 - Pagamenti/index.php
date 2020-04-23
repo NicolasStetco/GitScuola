@@ -39,8 +39,7 @@
                         <input type="number" name="tempoRiposo" id="tempoRiposo"><br>
                         <label for="media">Tipo di media:</label>
                         <input type="text" name="media" id="media"><br>
-                        <label for="file">File:</label>
-                        <input type="file" name="file" id="file"><br>
+                    
                 
                         <input type="button" style="margin: 10px" onclick="visualizzaEsercizi()" value="visualizza esercizi">
                         <input type="button" style="margin: 10px" onclick="aggiungiEsercizio()" value="Aggiungi nuovo esercizio">
@@ -50,21 +49,5 @@
             <div id="sospesi"> </div>
             <div id="pagati"> </div>
         </div>
-
-<div id="maschera2">
-<label for="sceltatitoli">Seleziona allenamento: </label>
-    <select id="sceltatitoli" >
-        <option value=" " selected></option>
-        <option value="Principiante">Principiante</option>
-        <option value="Intermedio">Intermedio</option>
-        <option value="Avanzato">Avanzato</option>
-    </select>
-    <div id="eserciziDaTitolo">
-        <div id="tabella"></div>
-        
-        <input type="button" id="btnInizia" >
-        <input type="button" id="btnAnnulla" value="Interrompi allenamento">
-    </div>
-</div>
     </body>
 </html>
