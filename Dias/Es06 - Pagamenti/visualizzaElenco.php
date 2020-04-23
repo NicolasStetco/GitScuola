@@ -1,6 +1,6 @@
 <?php 
 
-$db = new PDO('sqlite:ginnastica.sqlite3');
+$db = new PDO('sqlite:pagamenti.sqlite3');
 // SE NON ESISTE LA TABELLA DI DESTINAZIONE DEI DATI LA CREA
 /*$db->query('CREATE TABLE IF NOT EXISTS "condivisioni" (
     "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -13,31 +13,18 @@ $db = new PDO('sqlite:ginnastica.sqlite3');
     "time" DATETIME
 )');*/
 
+echo "<h1>Elenco</h1>";
+echo "<hr>";
 echo "<table>";
-echo "<tr class='header'><td>ID esercizi</td>";
-echo "<td>Titolo esercizio</td>";
-echo "<td>Indice</td>";
-echo "<td>Attività</td>";
-echo "<td>Descrizione</td>";
-echo "<td>Ripetizioni</td>";
-echo "<td>Durata</td>";
-echo "<td>Tempo di riposo</td>";
-echo "<td>Tipo media</td>";
-echo "<td>File</td>";
-echo "</tr>";
 
-$result = $db->query('SELECT * FROM esercizi');
+$result = $db->query('SELECT * FROM pagamenti');
     foreach($result as $row) {
-      echo "<tr><td>" . $row['ID'] . "</td>";
-      echo "<td>" . $row["titolo"] . "</td>";
-      echo "<td>" . $row["indice"] . "</td>";
-      echo "<td>" . $row["attività"] . "</td>";
-      echo "<td>" . $row["descrizione"] . "</td>";
-      echo "<td>" . $row["ripetizioni"] . "</td>";
-      echo "<td>" . $row["durata"] . "</td>";
-      echo "<td>" . $row["tempoRiposo"] . "</td>";
-      echo "<td>" . $row["media"] . "</td>";
-      echo "<td>" . $row["file"] . "</td>";
+      echo "<tr><td><input type='button' style='margin: 10px' onclick='sospendi()' value='S'></td>";
+      echo "<td><input type='button' style='margin: 10px' onclick='pagato()' value='P'></td>";
+      echo "<td>" . $row["cliente"] . "</td>";
+      echo "<td>" . $row["importo"] . "</td>";
+      echo "<td>" . $row["intervento"] . "</td>";
+      echo "<td><input type='button' style='margin: 10px' onclick='elimina()' value='X'></td>";
       echo "</tr>";
     }
 

@@ -1,13 +1,13 @@
 $(document).ready(function(){
     //console.log("gino");
-
+    visualizzaPagamenti();
   });
 
-  function visualizzaEsercizi() {
+  function visualizzaPagamenti() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-       document.getElementById("wrapper").innerHTML = this.responseText;
+       document.getElementById("elenco").innerHTML = this.responseText;
       }
     };
     xhttp.open("GET", "visualizzaElenco.php", true);
