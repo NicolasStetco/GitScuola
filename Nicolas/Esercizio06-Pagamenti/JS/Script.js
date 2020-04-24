@@ -61,16 +61,59 @@ $(document).ready(function(){
     
   }
 
-  function iniziaAllenamento(titolo){
-    //alert(titolo);
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("maschera2").innerHTML += this.responseText;
+  function elimina(id){
+    var httpE = new XMLHttpRequest();
+    httpE.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        console.log("eliminato");
+        document.getElementById("prova").innerHTML = this.responseText;
+
       }
     };
-    var dati =  "?titolo='"+titolo+"'";
-    xhttp.open("GET", "iniziaAllenamento.php"+dati, true);
-    //visualizzaEsercizi();
-    xhttp.send();
+
+    var dati="?stato=a&id="+id;
+    httpE.open("GET", "aggiorna.php"+dati, true);
+   
+    httpE.send();
+
+    visualizzaPagamenti();
+  }
+
+  function sospendi(id){
+    //alert(id);
+    
+    var httpE = new XMLHttpRequest();
+    httpE.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        console.log("sospeso");
+        document.getElementById("prova").innerHTML = this.responseText;
+
+      }
+    };
+
+    var dati="?stato=s&id="+id;
+    httpE.open("GET", "aggiorna.php"+dati, true);
+   
+    httpE.send();
+
+    visualizzaPagamenti();
+  }
+
+  function pagato(id){
+    //alert(id);
+    
+    var httpE = new XMLHttpRequest();
+    httpE.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+       console.log("Pagato");
+       document.getElementById("prova").innerHTML = this.responseText;
+      }
+    };
+
+    var dati="?stato=p&id="+id;
+    httpE.open("GET", "aggiorna.php"+dati, true);
+   
+    httpE.send();
+
+    visualizzaPagamenti();
   }

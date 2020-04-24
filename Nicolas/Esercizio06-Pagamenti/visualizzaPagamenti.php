@@ -22,15 +22,15 @@ if($stato=='e'){
 echo "<h1>Elenco</h1>";
 echo "<hr>";
 echo "<table>";
-$result = $db->query('SELECT * FROM pagamenti  ');
+$result = $db->query('SELECT * FROM pagamenti');
     foreach($result as $row) {
       if($row["stato"]=='e'){
-        echo "<tr><td><input type='button' style='margin: 10px' onclick='sospendi()' value='S'></td>";
-        echo "<td><input type='button' style='margin: 10px' onclick='pagato()' value='P'></td>";
+        echo "<tr><td><input type='button' style='margin: 10px'  onclick='sospendi(" . $row["id"] . ")'  value='S'></td>";
+        echo "<td><input type='button' style='margin: 10px' onclick='pagato(" . $row["id"] . ")' value='P'></td>";
         echo "<td>" . $row["cliente"] . "</td>";
         echo "<td>" . $row["importo"] . " €</td>";
         echo "<td>" . $row["intervento"] . "</td>";
-        echo "<td><input type='button' style='margin: 10px' onclick='elimina()' value='X'></td>";
+        echo "<td><input type='button' style='margin: 10px' onclick='elimina(" . $row["id"] . ")' value='X'></td>";
         echo "</tr>";
       } 
     }
@@ -59,7 +59,7 @@ echo "</table>";
 echo "</br>";
 echo "</br>";
 $db = null;  
-}else{
+}else if($stato=='s'){
   echo "<h1>Sospesi</h1>";
 echo "<hr>";
 echo "<table>";
