@@ -19,7 +19,7 @@ $stato=$_GET["stato"];
 //echo $stato;
 
 if($stato=='e'){
-echo "<h1>Elenco</h1>";
+echo "<h1 style='text-align:center'>Elenco</h1>";
 echo "<hr>";
 echo "<table>";
 $result = $db->query('SELECT * FROM pagamenti');
@@ -40,7 +40,7 @@ echo "</br>";
 echo "</br>";
 $db = null;  
 }else if($stato=='p'){
-  echo "<h1>Pagati</h1>";
+  echo "<h1 style='text-align:center'>Pagati</h1>";
 echo "<hr>";
 echo "<table>";
 $result = $db->query('SELECT * FROM pagamenti  ');
@@ -60,7 +60,7 @@ echo "</br>";
 echo "</br>";
 $db = null;  
 }else if($stato=='s'){
-  echo "<h1>Sospesi</h1>";
+  echo "<h1 style='text-align:center'>Sospesi</h1>";
 echo "<hr>";
 echo "<table>";
 $result = $db->query('SELECT * FROM pagamenti  ');

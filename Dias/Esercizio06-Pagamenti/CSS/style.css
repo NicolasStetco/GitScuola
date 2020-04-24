@@ -1,0 +1,43 @@
+#wrapper{
+    width: 95%;
+    margin: auto;  
+    width: auto;
+}
+#body{
+    background-color: whitesmoke;
+}
+#form{    
+    background-color: whitesmoke;
+}
+#sx{
+    width: 60%;
+    float: left;
+    display: inline;
+}
+#form{
+    width: 40%;
+    float: left;
+    display: inline-block;
+}
+#elenco{
+    width: 50%;
+    display: inline-block;
+}
+#sospesi{
+    background-color: red;
+    width: 48%;
+    float: left;
+    display: inline-block;
+    border-radius: 8%;
+    border:4px solid darkred;
+    padding-left: 10px;
+}
+#pagati{
+    padding-left: 10px;
+    margin-left: 5px;
+    background-color: green;
+    width: 48%;
+    display: inline-block;
+    border-radius: 8%;
+    border:4px solid darkgreen;
+}

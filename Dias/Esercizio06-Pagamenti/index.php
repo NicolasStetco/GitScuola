@@ -2,6 +2,7 @@
 <html>
     <head> 
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="CSS/style.css" type="text/css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -16,13 +17,19 @@
     <script src="JS/Script.js"></script>
 
     <style>
+    
+    
+
     </style>
     </head>
 
-     <body>
-     <h1 style="margin: 10px">Pagamenti</h1>
-        <div id="maschera1">
-                <div class="contenitore">
+     <body id="body">
+         <div id="wrapper">
+     
+       <div id="sx">
+       <h1 style="text-align: center">PAGAMENTI</h1>
+           <div>
+                <div id="form" style="height:300px">
                     <form action="aggiungi.php" method="GET" ></form>
                         <!--<input type="text" name="titolo " id="titolo">  --><br>
                         <label for="cliente">Cliente:</label>
@@ -36,9 +43,7 @@
                         <option value="riparazione">Riparazione</option>
                         <option value="installazione">Installazione</option>
                         <option value="rimozione">Rimozione</option>
-                        </select><br>
-                        <label for="id">Id:</label>
-                        <input type="text" name="id" id="id" readonly><br>                       
+                        </select><br>                   
                         <label for="descrizione">Descrizione:</label>
                         <input type="text" name="descrizione" id="descrizione"><br>
                         <label for="importo">Importo:</label>
@@ -48,11 +53,14 @@
                         <!--<input type="button" style="margin: 10px" onclick="visualizzaPagamenti()" value="Visualizza Pagamenti">-->
                         <input type="button" style="margin: 10px" onclick="aggiungiPagamenti()" value="Aggiungi nuovo Pagamento">
                     </form>  
+                    
             </div>
-            <div id="elenco"> </div>
+            <div id="elenco" style="height:300px"> </div></div>
             <div id="sospesi"> </div>
             <div id="pagati"> </div>
-            <div id="prova"></div>
-        </div>
+</div>
+            
+            
+</div>
     </body>
 </html>
