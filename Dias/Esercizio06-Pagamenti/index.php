@@ -45,13 +45,14 @@
                         <input type="text" name="importo" id="importo"><br>
                         
                 
-                        <input type="button" style="margin: 10px" onclick="visualizzaPagamenti()" value="Visualizza Pagamenti">
+                        <!--<input type="button" style="margin: 10px" onclick="visualizzaPagamenti()" value="Visualizza Pagamenti">-->
                         <input type="button" style="margin: 10px" onclick="aggiungiPagamenti()" value="Aggiungi nuovo Pagamento">
                     </form>  
             </div>
             <div id="elenco"> </div>
             <div id="sospesi"> </div>
             <div id="pagati"> </div>
+            <div id="prova"></div>
         </div>
     </body>
 </html>
