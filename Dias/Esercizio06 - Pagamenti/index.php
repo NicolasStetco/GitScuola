@@ -16,28 +16,15 @@
     <script src="JS/Script.js"></script>
 
     <style>
-    body{
-        margin:30px;
-    }
-    #elenco{
-        background-color:yellow;
-    }
-    #sospesi{
-        background-color:red;
-    }
-    #pagati{
-        background-color:green;
-    }
     </style>
     </head>
 
      <body>
-     <h1 style="margin: 10px">PAGAMENTI</h1>
+     <h1 style="margin: 10px">Pagamenti</h1>
         <div id="maschera1">
                 <div class="contenitore">
                     <form action="aggiungi.php" method="GET" ></form>
                         <!--<input type="text" name="titolo " id="titolo">  --><br>
-                        
                         <label for="cliente">Cliente:</label>
                         <input type="text" name="cliente" id="cliente"><br>
                         <label for="indirizzo">Indirizzo:</label>
@@ -45,24 +32,21 @@
                         <label for="data">Data:</label>
                         <input type="text" name="data" id="data"><br>
                         <label for="intervento">Intervento:</label>
-                        <select id="intervento" >
-                            <option value=" " selected></option>
-                            <option value="Riparazione">Riparazione</option>
-                            <option value="Installazione">Installazione</option>
-                            <option value="Rimozione">Rimozione</option>
-                        </select><br/>
-                        <label for="id">ID:</label>
-                        <input type="text" name="id" id="id" readonly><br>
-                        
+                        <select id="intervento">
+                        <option value="riparazione">Riparazione</option>
+                        <option value="installazione">Installazione</option>
+                        <option value="rimozione">Rimozione</option>
+                        </select><br>
+                        <label for="id">Id:</label>
+                        <input type="text" name="id" id="id" readonly><br>                       
                         <label for="descrizione">Descrizione:</label>
                         <input type="text" name="descrizione" id="descrizione"><br>
                         <label for="importo">Importo:</label>
-                        <input type="number" name="importo" id="importo"><br>
+                        <input type="text" name="importo" id="importo"><br>
                         
-                    
                 
-                        <input type="button" style="margin: 10px" onclick="visualizzaPagamenti()" value="visualizza pagamenti">
-                        <input type="button" style="margin: 10px" onclick="aggiungiEsercizio()" value="Aggiungi nuovo esercizio">
+                        <input type="button" style="margin: 10px" onclick="visualizzaPagamenti()" value="Visualizza Pagamenti">
+                        <input type="button" style="margin: 10px" onclick="aggiungiPagamenti()" value="Aggiungi nuovo Pagamento">
                     </form>  
             </div>
             <div id="elenco"> </div>

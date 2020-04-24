@@ -1,6 +1,6 @@
 <?php 
 
-$db = new PDO('sqlite:pagamenti.sqlite3');
+$db = new PDO('sqlite:Pagamenti.sqlite3');
 // SE NON ESISTE LA TABELLA DI DESTINAZIONE DEI DATI LA CREA
 /*$db->query('CREATE TABLE IF NOT EXISTS "condivisioni" (
     "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -22,7 +22,7 @@ $result = $db->query('SELECT * FROM pagamenti');
       echo "<tr><td><input type='button' style='margin: 10px' onclick='sospendi()' value='S'></td>";
       echo "<td><input type='button' style='margin: 10px' onclick='pagato()' value='P'></td>";
       echo "<td>" . $row["cliente"] . "</td>";
-      echo "<td>" . $row["importo"] . "</td>";
+      echo "<td>" . $row["importo"] . " €</td>";
       echo "<td>" . $row["intervento"] . "</td>";
       echo "<td><input type='button' style='margin: 10px' onclick='elimina()' value='X'></td>";
       echo "</tr>";
