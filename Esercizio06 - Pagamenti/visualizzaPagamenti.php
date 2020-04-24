@@ -16,7 +16,7 @@ $db = new PDO('sqlite:Pagamenti.sqlite3');
 
 $stato=$_GET["stato"];
 
-//echo $stato;
+echo $stato;
 
 if($stato=='e'){
 
