@@ -1,0 +1,27 @@
+C:\Users\ChiaraGian\Desktop\SCUOLA\4A INF\INFO\DB_SQL\Esercizi\Inquinamento\Inquinamento\bin\Debug\Inquinamento.exe.config
+C:\Users\ChiaraGian\Desktop\SCUOLA\4A INF\INFO\DB_SQL\Esercizi\Inquinamento\Inquinamento\bin\Debug\Inquinamento.exe
+C:\Users\ChiaraGian\Desktop\SCUOLA\4A INF\INFO\DB_SQL\Esercizi\Inquinamento\Inquinamento\bin\Debug\Inquinamento.pdb
+C:\Users\ChiaraGian\Desktop\SCUOLA\4A INF\INFO\DB_SQL\Esercizi\Inquinamento\Inquinamento\obj\Debug\Inquinamento.csprojAssemblyReference.cache
+C:\Users\ChiaraGian\Desktop\SCUOLA\4A INF\INFO\DB_SQL\Esercizi\Inquinamento\Inquinamento\obj\Debug\Inquinamento.Form1.resources
+C:\Users\ChiaraGian\Desktop\SCUOLA\4A INF\INFO\DB_SQL\Esercizi\Inquinamento\Inquinamento\obj\Debug\Inquinamento.Properties.Resources.resources
+C:\Users\ChiaraGian\Desktop\SCUOLA\4A INF\INFO\DB_SQL\Esercizi\Inquinamento\Inquinamento\obj\Debug\Inquinamento.csproj.GenerateResource.cache
+C:\Users\ChiaraGian\Desktop\SCUOLA\4A INF\INFO\DB_SQL\Esercizi\Inquinamento\Inquinamento\obj\Debug\Inquinamento.exe
+C:\Users\ChiaraGian\Desktop\SCUOLA\4A INF\INFO\DB_SQL\Esercizi\Inquinamento\Inquinamento\obj\Debug\Inquinamento.pdb
+C:\Users\stetc\OneDrive\Desktop\Esercizi\Inquinamento\Inquinamento\bin\Debug\Inquinamento.exe.config
+C:\Users\stetc\OneDrive\Desktop\Esercizi\Inquinamento\Inquinamento\bin\Debug\Inquinamento.exe
+C:\Users\stetc\OneDrive\Desktop\Esercizi\Inquinamento\Inquinamento\bin\Debug\Inquinamento.pdb
+C:\Users\stetc\OneDrive\Desktop\Esercizi\Inquinamento\Inquinamento\obj\Debug\Inquinamento.csprojAssemblyReference.cache
+C:\Users\stetc\OneDrive\Desktop\Esercizi\Inquinamento\Inquinamento\obj\Debug\Inquinamento.Form1.resources
+C:\Users\stetc\OneDrive\Desktop\Esercizi\Inquinamento\Inquinamento\obj\Debug\Inquinamento.Properties.Resources.resources
+C:\Users\stetc\OneDrive\Desktop\Esercizi\Inquinamento\Inquinamento\obj\Debug\Inquinamento.csproj.GenerateResource.cache
+C:\Users\stetc\OneDrive\Desktop\Esercizi\Inquinamento\Inquinamento\obj\Debug\Inquinamento.exe
+C:\Users\stetc\OneDrive\Desktop\Esercizi\Inquinamento\Inquinamento\obj\Debug\Inquinamento.pdb
+C:\Users\stetc\OneDrive\Desktop\Scuola\Informatica\Pratico\Esercizi\SQL\Inquinamento\Inquinamento\bin\Debug\Inquinamento.exe.config
+C:\Users\stetc\OneDrive\Desktop\Scuola\Informatica\Pratico\Esercizi\SQL\Inquinamento\Inquinamento\bin\Debug\Inquinamento.exe
+C:\Users\stetc\OneDrive\Desktop\Scuola\Informatica\Pratico\Esercizi\SQL\Inquinamento\Inquinamento\bin\Debug\Inquinamento.pdb
+C:\Users\stetc\OneDrive\Desktop\Scuola\Informatica\Pratico\Esercizi\SQL\Inquinamento\Inquinamento\obj\Debug\Inquinamento.csprojAssemblyReference.cache
+C:\Users\stetc\OneDrive\Desktop\Scuola\Informatica\Pratico\Esercizi\SQL\Inquinamento\Inquinamento\obj\Debug\Inquinamento.Form1.resources
+C:\Users\stetc\OneDrive\Desktop\Scuola\Informatica\Pratico\Esercizi\SQL\Inquinamento\Inquinamento\obj\Debug\Inquinamento.Properties.Resources.resources
+C:\Users\stetc\OneDrive\Desktop\Scuola\Informatica\Pratico\Esercizi\SQL\Inquinamento\Inquinamento\obj\Debug\Inquinamento.csproj.GenerateResource.cache
+C:\Users\stetc\OneDrive\Desktop\Scuola\Informatica\Pratico\Esercizi\SQL\Inquinamento\Inquinamento\obj\Debug\Inquinamento.exe
+C:\Users\stetc\OneDrive\Desktop\Scuola\Informatica\Pratico\Esercizi\SQL\Inquinamento\Inquinamento\obj\Debug\Inquinamento.pdb
