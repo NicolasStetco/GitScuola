@@ -269,7 +269,25 @@ namespace Inquinamento
         DataTable tabellaInquinanti = new DataTable();
         bool selezionaInquinanti;
 
+        private void switchInquinanti(object sender, EventArgs e)
+        {
+            //MessageBox.Show("ABBATEEEE");
+            grpElencoInquinanti.Enabled = true;
+            grpModificaInquinanti.Enabled = false;
 
+            string[] stati = new string[3];
+            stati[0] = "Solido";
+            stati[1] = "Liquido";
+            stati[2] = "Gassoso";
+
+            cmbStato.DataSource = stati;
+            cmbStato.SelectedIndex = -1;
+
+
+            selezionaInquinanti = false;
+            caricaInquinanti('L');
+            selezionaInquinanti = true;
+        }
 
 
         private void caricaInquinanti( char from)
@@ -304,14 +322,7 @@ namespace Inquinamento
             inq.Dispose();
         }
 
-        private void switchInquinanti(object sender, EventArgs e)
-        {
-            //MessageBox.Show("ABBATEEEE");
-
-            selezionaInquinanti = false;
-            caricaInquinanti('L');
-            selezionaInquinanti = true;
-        }
+      
 
         private void chkInquinantiAnnullati_CheckedChanged(object sender, EventArgs e)
         {
@@ -320,5 +331,98 @@ namespace Inquinamento
             selezionaInquinanti = true;
         }
 
+        private void btnAggiungiinquinante_Click(object sender, EventArgs e)
+        {
+
+            grpElencoInquinanti.Enabled = false;
+            grpModificaInquinanti.Enabled = true;
+
+            clsInquinante inquinante = new clsInquinante("Inquinamento.mdf");
+            lblCodInquinante.Text = inquinante.getNuovoCodice();
+            inquinante.Dispose();
+            txtNomeInquinante.Focus();
+
+
+        }
+
+        private void btnAnnullaInquinamenti_Click(object sender, EventArgs e)
+        {
+            grpElencoInquinanti.Enabled = true;
+            grpModificaInquinanti.Enabled = false;
+
+            txtCittaInquinante.Text = string.Empty;
+            txtNomeInquinante.Text = string.Empty;
+            nmbPesoSpecifico.Value = 0;
+            chkAnnullaValInquinamento.Checked = false;
+            cmbStato.SelectedIndex = -1;
+            lblCodInquinante.Text = string.Empty; 
+        }
+
+        private void btnConfermaModifica_Click(object sender, EventArgs e)
+        {
+
+            bool esito = false;
+            //controllo campi di input, non è possibile premere conferma fino a quando tutti i campi non saranno riempiti
+            if (txtNomeInquinante.Text == string.Empty)
+            {
+                MessageBox.Show("Inserisci il nome dell'inquinante");
+                txtNomeInquinante.Focus();
+            }
+            else if (txtCittaInquinante.Text == string.Empty)
+            {
+                MessageBox.Show("Inserisci la città dell'inquinante");
+                txtCittaInquinante.Focus();
+            }
+            else if (cmbStato.SelectedIndex ==-1)
+                MessageBox.Show("Seleziona lo stato dell'inquinante");
+            else
+            {
+                //i campi sono stati riempiti
+                clsInquinante inquinante = new clsInquinante("Inquinamento.mdf");
+
+                inquinante.codice = lblCodInquinante.Text;
+                inquinante.citta = txtCittaInquinante.Text;
+                inquinante.nomeInquinante = txtNomeInquinante.Text;
+                inquinante.pesoSpecifico = Convert.ToInt32(nmbPesoSpecifico.Value);
+
+                if (chkAnnullaValInquinamento.Checked == true)
+                    inquinante.validita = 'A';
+
+                switch (cmbStato.SelectedItem)
+                {
+                    case "Solido":
+                        inquinante.stato = 'S';
+                        break;
+
+                    case "Liquido":
+                        inquinante.stato = 'L';
+                        break;
+
+                    case "Gassoso":
+                        inquinante.stato = 'G';
+                        break;
+                }
+
+                
+
+                if (btnConfermaModifica.Text == "Aggiungi")
+                {
+                    //MessageBox.Show(Convert.ToString(inquinante.stato));
+                    esito=inquinante.aggiungi();
+                }
+
+                if(esito)
+                {
+                    selezionaAziende = false;
+                    elencoAziende('L');
+                    selezionaAziende = true;
+                }
+
+                inquinante.Dispose();
+                //torno all'elenco inquinanti
+                btnAnnullaInquinamenti_Click(this,e);
+            }
+       
+        }
     }
 }

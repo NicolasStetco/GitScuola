@@ -26,7 +26,7 @@ namespace Inquinamento
         /***********************************************/
         /* Imposta/Recupera le proprità dell'inquinante*/
         /***********************************************/
-        public string codAzienda
+        public string codice
         {
             get { return _codInquinante; }
             set { _codInquinante = value; }
@@ -289,8 +289,8 @@ namespace Inquinamento
                 _codInquinante = getNuovoCodice();
 
                 /* Inserisci nella tabella con questi campi questi valori */
-                sql = "INSERT INTO Aziende " +
-                        "(CodInquinante, NomeInquinante, PesSpecinquinante , c ittaAzienda, StatoInquinante, ValInquinante ) " +
+                sql = "INSERT INTO Inquinanti " +
+                        "(CodInquinante, NomeInquinante, PesSpecinquinante , CittaInquinante, StatoInquinante, ValInquinante ) " +
                         "VALUES(" + "'" + _codInquinante + "'," +
                                     "'" + _nomeInquinante + "'," +
                                     " " + _pesoSpecificoInquinante + "," +
@@ -305,7 +305,7 @@ namespace Inquinamento
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Attenzione !!" + e.Message);
+                    MessageBox.Show("Attenzione !!HIYUGEIUDHU" + e.Message);
                 }
             }
             else
