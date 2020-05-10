@@ -232,7 +232,7 @@ namespace Inquinamento
             {
                 sqlInquinanti.eseguiNonQuery(sql, CommandType.Text);
                 esito = true;
-                if (_validita == 'A')
+                if (_validita  == 'A')
                     MessageBox.Show("Inquinante cancellato con successo.");
                 else
                     MessageBox.Show("Inquinante ripristinato con successo.");
@@ -259,13 +259,13 @@ namespace Inquinamento
                   "PesSpecInquinante = " + _pesoSpecificoInquinante + ", " +
                   "CittaInquinante = '" + _cittaInquinante + "', " +
                   "StatoInquinante = '" + _statoInquinante + "', " +
-                  "Valinquinante = '" + _validita + "' " +
+                  "ValInquinante = '" + _validita + "' " +
                   "WHERE CodInquinante = '" + _codInquinante + "' ";
             try
             {
                 sqlInquinanti.eseguiNonQuery(sql, CommandType.Text);
                 esito = true;
-                MessageBox.Show("Azienda modificata con successo.");
+                MessageBox.Show("Inquinante modificato con successo.");
             }
             catch (Exception e)
             {
@@ -305,12 +305,12 @@ namespace Inquinamento
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Attenzione !!HIYUGEIUDHU" + e.Message);
+                    MessageBox.Show("Attenzione !!" + e.Message);
                 }
             }
             else
             {
-                MessageBox.Show("Azienda già presente.");
+                MessageBox.Show("Inquinante già presente.");
             }
 
             return esito;

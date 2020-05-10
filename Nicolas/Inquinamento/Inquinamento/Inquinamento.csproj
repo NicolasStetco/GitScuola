@@ -64,6 +64,8 @@
     <Compile Include="adoNetSQL.cs" />
     <Compile Include="clsAzienda.cs" />
     <Compile Include="clsInquinante.cs" />
+    <Compile Include="clsProdotto.cs" />
+    <Compile Include="clsScarico.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

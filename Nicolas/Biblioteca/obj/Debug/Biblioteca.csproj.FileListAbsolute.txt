@@ -1,0 +1,9 @@
+C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\bin\Debug\Biblioteca.exe.config
+C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\bin\Debug\Biblioteca.exe
+C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\bin\Debug\Biblioteca.pdb
+C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\obj\Debug\Biblioteca.csprojAssemblyReference.cache
+C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\obj\Debug\Biblioteca.frmLogin.resources
+C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\obj\Debug\Biblioteca.Properties.Resources.resources
+C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\obj\Debug\Biblioteca.csproj.GenerateResource.cache
+C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\obj\Debug\Biblioteca.exe
+C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\obj\Debug\Biblioteca.pdb
