@@ -233,12 +233,12 @@ namespace Inquinamento
 
                 /* Inserisci nella tabella con questi campi questi valori */
                 sql = "INSERT INTO Scarichi " +
-                        "(CodInqScarico, CodProScarico, QtaScarico , CodAziScarico, CodScarico, ValScarico ) " +
+                        "(CodInqScarico, CodProScarico, QtaScarico , CodAziScarico,  ValScarico ) " +
                         "VALUES(" + "'" + _codInquinante + "'," +
                                     "'" + _codProdotto + "'," +
                                     " " + _quantita + "," +
                                     "'" + _codAzienda + "'," +
-                                    "'" + _codiceScarico + "'," +
+                                  
                                     "'" + _validita + "')";
                 try
                 {

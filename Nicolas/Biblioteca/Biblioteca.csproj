@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="adoNetSQL.cs" />
+    <Compile Include="clsGenere.cs" />
+    <Compile Include="clsLettore.cs" />
+    <Compile Include="clsLibro.cs" />
     <Compile Include="clsUtente.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -60,10 +63,31 @@
     <Compile Include="frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLettori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLettori.Designer.cs">
+      <DependentUpon>frmLettori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistrazione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrazione.Designer.cs">
+      <DependentUpon>frmRegistrazione.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLettori.resx">
+      <DependentUpon>frmLettori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistrazione.resx">
+      <DependentUpon>frmRegistrazione.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

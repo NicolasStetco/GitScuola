@@ -19,7 +19,7 @@ namespace Biblioteca
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
+            txtLoginUser.Focus();
         }
 
         private void btnAccedi_Click(object sender, EventArgs e)
@@ -30,13 +30,16 @@ namespace Biblioteca
                 MessageBox.Show("Inserisci la password");
             else if (controllo())
             {
+                //this.Close();
                 frmHome f = new frmHome();
-                f.Show();
-                frmLogin fL = new frmLogin();
-                fL.Close();
+                f.Show(); 
             }
             else
+            {
                 MessageBox.Show("Nome utente o password errati");
+                txtLoginUser.Focus();
+            }
+                
         }
 
 
@@ -50,6 +53,12 @@ namespace Biblioteca
 
             return utente.controlloLogin();
 
+        }
+
+        private void btnRegistrazione_Click(object sender, EventArgs e)
+        {
+            frmRegistrazione r = new frmRegistrazione();
+            r.Show();
         }
     }
 }
