@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Windows.Forms;
 
@@ -73,18 +69,18 @@ namespace Biblioteca
 
         public int getNuovoCodice()
         {
-            int nuovoCodice=-1;
+            int nuovoCodice = -1;
             string risultato = string.Empty;
-           
-            
+
+
             sql = "SELECT MAX(CodUtente) AS MAXCODICE " +
                 "FROM Utenti";
 
             try
             {
                 risultato = sqlUtente.eseguiScalar(sql, CommandType.Text);
-                nuovoCodice = Convert.ToInt32(risultato) +1;
-                
+                nuovoCodice = Convert.ToInt32(risultato) + 1;
+
             }
             catch (Exception e)
             {
@@ -144,7 +140,7 @@ namespace Biblioteca
             /* seleziona dalla tabella inquinanti tutti gli elementi con il nome passato e li conta */
             sql = "SELECT COUNT(*) AS TOTALE " +
                 "FROM Utenti " +
-                "WHERE UPPER(UserIDUtente) = '" + _userID.ToUpper() + "'  AND PwdUtente ='"+_password +"'";
+                "WHERE UPPER(UserIDUtente) = '" + _userID.ToUpper() + "'  AND PwdUtente ='" + _password + "'";
 
             try
             {
@@ -186,8 +182,8 @@ namespace Biblioteca
                 tabellaUtenti = sqlUtente.eseguiQuery(sql, CommandType.Text);
                 _nominativo = tabellaUtenti.Rows[0].ItemArray[0].ToString();
                 _tipo = tabellaUtenti.Rows[0].ItemArray[1].ToString();
-                _userID =tabellaUtenti.Rows[0].ItemArray[2].ToString();
-                _password =tabellaUtenti.Rows[0].ItemArray[3].ToString();
+                _userID = tabellaUtenti.Rows[0].ItemArray[2].ToString();
+                _password = tabellaUtenti.Rows[0].ItemArray[3].ToString();
                 _val = Convert.ToChar(tabellaUtenti.Rows[0].ItemArray[4]);
             }
             catch (Exception e)
@@ -297,7 +293,32 @@ namespace Biblioteca
             return esito;
         }
 
+        public void getDatiFromUserAndPWD()
+        {
+            int I;
 
+            //clearDati();
+            tabellaUtenti.Clear();
 
+            sql = "SELECT " +
+                  "NominativoUtente, TipoUtente,UserIDUtente, PwdUtente, ValUtente " +
+                  "FROM Utenti " +
+                  "WHERE  PwdUtente= '" + _password + "' AND UserIDUtente= '" + _userID + "' ";
+            try
+            {
+                tabellaUtenti = sqlUtente.eseguiQuery(sql, CommandType.Text);
+                _nominativo = tabellaUtenti.Rows[0].ItemArray[0].ToString();
+                _tipo = tabellaUtenti.Rows[0].ItemArray[1].ToString();
+                _userID = tabellaUtenti.Rows[0].ItemArray[2].ToString();
+                _password = tabellaUtenti.Rows[0].ItemArray[3].ToString();
+                _val = Convert.ToChar(tabellaUtenti.Rows[0].ItemArray[4]);
+            }
+            catch (Exception e)
+            {
+                _codice = -1;
+                MessageBox.Show("Nome utente o password errati");
+                //MessageBox.Show("Attenzione tqisha ropt!!" + e.Message);
+            }
+        }
     }
 }

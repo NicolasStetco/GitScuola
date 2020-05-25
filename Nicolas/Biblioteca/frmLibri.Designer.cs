@@ -1,0 +1,365 @@
+﻿namespace Biblioteca
+{
+    partial class frmLibri
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.grpGestione = new System.Windows.Forms.GroupBox();
+            this.lblPrestito = new System.Windows.Forms.Label();
+            this.pctCopertina = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nmbAnno = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbGenere = new System.Windows.Forms.ComboBox();
+            this.btnConferma = new System.Windows.Forms.Button();
+            this.btnAnnulla = new System.Windows.Forms.Button();
+            this.lblCodice = new System.Windows.Forms.Label();
+            this.chkAnnullaValditita = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtAutore = new System.Windows.Forms.TextBox();
+            this.txtISBN = new System.Windows.Forms.TextBox();
+            this.txtTitolo = new System.Windows.Forms.TextBox();
+            this.grpElenco = new System.Windows.Forms.GroupBox();
+            this.btnAggiungi = new System.Windows.Forms.Button();
+            this.cmbLibri = new System.Windows.Forms.ComboBox();
+            this.chkAggiungiAnnullati = new System.Windows.Forms.CheckBox();
+            this.dgvElenco = new System.Windows.Forms.DataGridView();
+            this.grpGestione.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctCopertina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmbAnno)).BeginInit();
+            this.grpElenco.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvElenco)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // grpGestione
+            // 
+            this.grpGestione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.grpGestione.Controls.Add(this.lblPrestito);
+            this.grpGestione.Controls.Add(this.pctCopertina);
+            this.grpGestione.Controls.Add(this.button1);
+            this.grpGestione.Controls.Add(this.label6);
+            this.grpGestione.Controls.Add(this.label4);
+            this.grpGestione.Controls.Add(this.nmbAnno);
+            this.grpGestione.Controls.Add(this.label5);
+            this.grpGestione.Controls.Add(this.cmbGenere);
+            this.grpGestione.Controls.Add(this.btnConferma);
+            this.grpGestione.Controls.Add(this.btnAnnulla);
+            this.grpGestione.Controls.Add(this.lblCodice);
+            this.grpGestione.Controls.Add(this.chkAnnullaValditita);
+            this.grpGestione.Controls.Add(this.label3);
+            this.grpGestione.Controls.Add(this.label2);
+            this.grpGestione.Controls.Add(this.label1);
+            this.grpGestione.Controls.Add(this.txtAutore);
+            this.grpGestione.Controls.Add(this.txtISBN);
+            this.grpGestione.Controls.Add(this.txtTitolo);
+            this.grpGestione.Location = new System.Drawing.Point(822, 12);
+            this.grpGestione.Name = "grpGestione";
+            this.grpGestione.Size = new System.Drawing.Size(516, 475);
+            this.grpGestione.TabIndex = 3;
+            this.grpGestione.TabStop = false;
+            this.grpGestione.Text = "Gestione";
+            // 
+            // lblPrestito
+            // 
+            this.lblPrestito.AutoSize = true;
+            this.lblPrestito.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrestito.Location = new System.Drawing.Point(122, 279);
+            this.lblPrestito.Name = "lblPrestito";
+            this.lblPrestito.Size = new System.Drawing.Size(0, 17);
+            this.lblPrestito.TabIndex = 20;
+            // 
+            // pctCopertina
+            // 
+            this.pctCopertina.Location = new System.Drawing.Point(288, 213);
+            this.pctCopertina.Name = "pctCopertina";
+            this.pctCopertina.Size = new System.Drawing.Size(168, 172);
+            this.pctCopertina.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctCopertina.TabIndex = 19;
+            this.pctCopertina.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(345, 117);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 41);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Scegli file...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(267, 129);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 17);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Copertina:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(327, 61);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(136, 17);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Anno pubblicazione:";
+            // 
+            // nmbAnno
+            // 
+            this.nmbAnno.Location = new System.Drawing.Point(314, 81);
+            this.nmbAnno.Maximum = new decimal(new int[] {
+            2020,
+            0,
+            0,
+            0});
+            this.nmbAnno.Name = "nmbAnno";
+            this.nmbAnno.Size = new System.Drawing.Size(165, 22);
+            this.nmbAnno.TabIndex = 15;
+            this.nmbAnno.Value = new decimal(new int[] {
+            1500,
+            0,
+            0,
+            0});
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 142);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 17);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Genere: ";
+            // 
+            // cmbGenere
+            // 
+            this.cmbGenere.FormattingEnabled = true;
+            this.cmbGenere.Location = new System.Drawing.Point(91, 139);
+            this.cmbGenere.Name = "cmbGenere";
+            this.cmbGenere.Size = new System.Drawing.Size(165, 24);
+            this.cmbGenere.TabIndex = 13;
+            // 
+            // btnConferma
+            // 
+            this.btnConferma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnConferma.Location = new System.Drawing.Point(150, 405);
+            this.btnConferma.Name = "btnConferma";
+            this.btnConferma.Size = new System.Drawing.Size(132, 50);
+            this.btnConferma.TabIndex = 11;
+            this.btnConferma.Text = "button1";
+            this.btnConferma.UseVisualStyleBackColor = false;
+            this.btnConferma.Click += new System.EventHandler(this.btnConferma_Click);
+            // 
+            // btnAnnulla
+            // 
+            this.btnAnnulla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAnnulla.Location = new System.Drawing.Point(288, 405);
+            this.btnAnnulla.Name = "btnAnnulla";
+            this.btnAnnulla.Size = new System.Drawing.Size(132, 50);
+            this.btnAnnulla.TabIndex = 10;
+            this.btnAnnulla.Text = "Annulla";
+            this.btnAnnulla.UseVisualStyleBackColor = false;
+            this.btnAnnulla.Click += new System.EventHandler(this.btnAnnulla_Click);
+            // 
+            // lblCodice
+            // 
+            this.lblCodice.AutoSize = true;
+            this.lblCodice.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodice.Location = new System.Drawing.Point(79, 34);
+            this.lblCodice.Name = "lblCodice";
+            this.lblCodice.Size = new System.Drawing.Size(67, 17);
+            this.lblCodice.TabIndex = 9;
+            this.lblCodice.Text = "Codice: ";
+            // 
+            // chkAnnullaValditita
+            // 
+            this.chkAnnullaValditita.AutoSize = true;
+            this.chkAnnullaValditita.Location = new System.Drawing.Point(330, 176);
+            this.chkAnnullaValditita.Name = "chkAnnullaValditita";
+            this.chkAnnullaValditita.Size = new System.Drawing.Size(125, 21);
+            this.chkAnnullaValditita.TabIndex = 8;
+            this.chkAnnullaValditita.Text = "Annulla validità";
+            this.chkAnnullaValditita.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 114);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Autore:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 172);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "ISBN:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Titolo: ";
+            // 
+            // txtAutore
+            // 
+            this.txtAutore.Location = new System.Drawing.Point(91, 111);
+            this.txtAutore.Name = "txtAutore";
+            this.txtAutore.Size = new System.Drawing.Size(165, 22);
+            this.txtAutore.TabIndex = 2;
+            // 
+            // txtISBN
+            // 
+            this.txtISBN.Location = new System.Drawing.Point(91, 169);
+            this.txtISBN.Name = "txtISBN";
+            this.txtISBN.Size = new System.Drawing.Size(165, 22);
+            this.txtISBN.TabIndex = 1;
+            // 
+            // txtTitolo
+            // 
+            this.txtTitolo.Location = new System.Drawing.Point(91, 83);
+            this.txtTitolo.Name = "txtTitolo";
+            this.txtTitolo.Size = new System.Drawing.Size(165, 22);
+            this.txtTitolo.TabIndex = 0;
+            // 
+            // grpElenco
+            // 
+            this.grpElenco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.grpElenco.Controls.Add(this.btnAggiungi);
+            this.grpElenco.Controls.Add(this.cmbLibri);
+            this.grpElenco.Controls.Add(this.chkAggiungiAnnullati);
+            this.grpElenco.Controls.Add(this.dgvElenco);
+            this.grpElenco.Location = new System.Drawing.Point(5, 12);
+            this.grpElenco.Name = "grpElenco";
+            this.grpElenco.Size = new System.Drawing.Size(811, 475);
+            this.grpElenco.TabIndex = 2;
+            this.grpElenco.TabStop = false;
+            this.grpElenco.Text = "Elenco ";
+            // 
+            // btnAggiungi
+            // 
+            this.btnAggiungi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAggiungi.Location = new System.Drawing.Point(292, 405);
+            this.btnAggiungi.Name = "btnAggiungi";
+            this.btnAggiungi.Size = new System.Drawing.Size(132, 50);
+            this.btnAggiungi.TabIndex = 3;
+            this.btnAggiungi.Text = "Aggiungi libro";
+            this.btnAggiungi.UseVisualStyleBackColor = false;
+            this.btnAggiungi.Click += new System.EventHandler(this.btnAggiungi_Click);
+            // 
+            // cmbLibri
+            // 
+            this.cmbLibri.FormattingEnabled = true;
+            this.cmbLibri.Location = new System.Drawing.Point(250, 0);
+            this.cmbLibri.Name = "cmbLibri";
+            this.cmbLibri.Size = new System.Drawing.Size(121, 24);
+            this.cmbLibri.TabIndex = 2;
+            this.cmbLibri.Visible = false;
+            this.cmbLibri.SelectedIndexChanged += new System.EventHandler(this.cmbLibri_SelectedIndexChanged);
+            // 
+            // chkAggiungiAnnullati
+            // 
+            this.chkAggiungiAnnullati.AutoSize = true;
+            this.chkAggiungiAnnullati.Location = new System.Drawing.Point(559, 421);
+            this.chkAggiungiAnnullati.Name = "chkAggiungiAnnullati";
+            this.chkAggiungiAnnullati.Size = new System.Drawing.Size(142, 21);
+            this.chkAggiungiAnnullati.TabIndex = 1;
+            this.chkAggiungiAnnullati.Text = "Aggiungi annullati";
+            this.chkAggiungiAnnullati.UseVisualStyleBackColor = true;
+            this.chkAggiungiAnnullati.CheckedChanged += new System.EventHandler(this.chkAggiungiAnnullati_CheckedChanged);
+            // 
+            // dgvElenco
+            // 
+            this.dgvElenco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvElenco.Location = new System.Drawing.Point(6, 34);
+            this.dgvElenco.Name = "dgvElenco";
+            this.dgvElenco.RowHeadersWidth = 51;
+            this.dgvElenco.RowTemplate.Height = 24;
+            this.dgvElenco.Size = new System.Drawing.Size(799, 351);
+            this.dgvElenco.TabIndex = 0;
+            // 
+            // frmLibri
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.ClientSize = new System.Drawing.Size(1343, 500);
+            this.Controls.Add(this.grpGestione);
+            this.Controls.Add(this.grpElenco);
+            this.Name = "frmLibri";
+            this.Text = "Libri";
+            this.Load += new System.EventHandler(this.frmLibri_Load);
+            this.grpGestione.ResumeLayout(false);
+            this.grpGestione.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctCopertina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmbAnno)).EndInit();
+            this.grpElenco.ResumeLayout(false);
+            this.grpElenco.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvElenco)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.GroupBox grpGestione;
+        private System.Windows.Forms.Button btnConferma;
+        private System.Windows.Forms.Button btnAnnulla;
+        private System.Windows.Forms.Label lblCodice;
+        private System.Windows.Forms.CheckBox chkAnnullaValditita;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtAutore;
+        private System.Windows.Forms.TextBox txtISBN;
+        private System.Windows.Forms.TextBox txtTitolo;
+        private System.Windows.Forms.GroupBox grpElenco;
+        private System.Windows.Forms.Button btnAggiungi;
+        private System.Windows.Forms.ComboBox cmbLibri;
+        private System.Windows.Forms.CheckBox chkAggiungiAnnullati;
+        private System.Windows.Forms.DataGridView dgvElenco;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbGenere;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown nmbAnno;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pctCopertina;
+        private System.Windows.Forms.Label lblPrestito;
+    }
+}

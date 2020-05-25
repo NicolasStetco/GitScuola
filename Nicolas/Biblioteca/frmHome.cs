@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Biblioteca
@@ -18,13 +12,20 @@ namespace Biblioteca
         }
 
         DataTable tabellaPrestati = new DataTable();
+        bool firstRun = true;
 
         private void frmHome_Load(object sender, EventArgs e)
         {
-            //if (utente.tipo=="OPE")
+            if (globals.tipoUtente == "OPE")
                 areaRiservataToolStripMenuItem.Enabled = false;
 
+            this.Text += globals.nomeUtente;
+
+
             prestitiRecenti();
+            firstRun = false;
+
+            //MessageBox.Show(globals.tipoUtente);
         }
 
 
@@ -32,14 +33,13 @@ namespace Biblioteca
         {
             clsLibro l = new clsLibro("Biblioteca.mdf");
             tabellaPrestati = l.prestati();
-            
+
             dgvPrestati.DataSource = tabellaPrestati;
 
             cmbPrestatiNONVISIBILE.DataSource = tabellaPrestati;
             cmbPrestatiNONVISIBILE.ValueMember = "CodLibro";
-            cmbPrestatiNONVISIBILE.DisplayMember = "TitoloLibro";
-            cmbPrestatiNONVISIBILE.SelectedIndex = 1;
-            
+            cmbPrestatiNONVISIBILE.DisplayMember = "CodLibro";
+            cmbPrestatiNONVISIBILE.SelectedIndex = -1;
 
             l.dispose();
         }
@@ -51,7 +51,7 @@ namespace Biblioteca
 
         private void cmbPrestatiNONVISIBILE_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbPrestatiNONVISIBILE.SelectedIndex != -1)
+            if (cmbPrestatiNONVISIBILE.SelectedIndex != -1 && !firstRun)
             {
                 clsLibro libro = new clsLibro("Biblioteca.mdf");
 
@@ -63,7 +63,7 @@ namespace Biblioteca
                 lblGenere.Text = libro.codGenere.ToString();
                 lblTitolo.Text = libro.titolo;
 
-                clsGenere g= new clsGenere("Biblioteca.mdf");
+                clsGenere g = new clsGenere("Biblioteca.mdf");
 
                 g.codice = libro.codGenere;
                 g.getDati();
@@ -71,8 +71,16 @@ namespace Biblioteca
 
                 g.dispose();
 
+                clsPrestito p = new clsPrestito("Biblioteca.mdf");
 
-                ptbCopertina.ImageLocation =@"IMG\\"+libro.immagine;
+                p.codLibro = libro.codice;
+                p.getPrestitoFromLibro();
+                lblDataPrestito.Text = p.dataPrestito.ToShortDateString();
+
+                p.dispose();
+
+
+                ptbCopertina.ImageLocation = @"IMG\\" + libro.immagine;
 
                 libro.dispose();
             }
@@ -80,7 +88,7 @@ namespace Biblioteca
 
         private void ingrandisci(object sender, EventArgs e)
         {
-            ptbCopertina.Width=ptbCopertina.Width*2;
+            ptbCopertina.Width = ptbCopertina.Width * 2;
             ptbCopertina.Height = ptbCopertina.Height * 2;
         }
 
@@ -93,6 +101,40 @@ namespace Biblioteca
         private void nuovoLettoreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmLettori f = new frmLettori();
+            f.Show();
+        }
+
+        private void chiudiTutto(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void gestioneLibriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLibri f = new frmLibri();
+            f.Show();
+        }
+
+        private void prestitiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+            globals.DATAGRID = dgvPrestati;
+            globals.COMBO = cmbPrestatiNONVISIBILE;
+            frmPrestiti f = new frmPrestiti();
+            f.Show();
+
+            
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void schedaLibroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSchedaLibro f = new frmSchedaLibro();
             f.Show();
         }
     }

@@ -66,11 +66,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 106);
+            this.label1.Location = new System.Drawing.Point(40, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 17);
+            this.label1.Size = new System.Drawing.Size(73, 17);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Utente:";
+            this.label1.Text = "Password:";
             // 
             // txtLoginPwd
             // 
@@ -78,6 +78,7 @@
             this.txtLoginPwd.Name = "txtLoginPwd";
             this.txtLoginPwd.Size = new System.Drawing.Size(145, 22);
             this.txtLoginPwd.TabIndex = 2;
+            this.txtLoginPwd.Text = "sistema";
             this.txtLoginPwd.UseSystemPasswordChar = true;
             // 
             // lbl1
@@ -95,6 +96,7 @@
             this.txtLoginUser.Name = "txtLoginUser";
             this.txtLoginUser.Size = new System.Drawing.Size(145, 22);
             this.txtLoginUser.TabIndex = 0;
+            this.txtLoginUser.Text = "admin";
             // 
             // frmLogin
             // 

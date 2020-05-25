@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Windows.Forms;
 
@@ -19,7 +15,7 @@ namespace Biblioteca
         private int _anno;
         private char _val;
         private char _prestito;
-        
+
 
         private string sql;
         private adoNetSQL sqlLibro;
@@ -76,7 +72,7 @@ namespace Biblioteca
             set { _val = value; }
         }
 
-        public char prestito
+        public char prestato
         {
             get { return _prestito; }
             set { _prestito = value; }
@@ -93,15 +89,15 @@ namespace Biblioteca
             sqlLibro.Dispose();
         }
 
-        /*
+
         public int getNuovoCodice()
         {
             int nuovoCodice = -1;
             string risultato = string.Empty;
 
 
-            sql = "SELECT MAX(CodUtente) AS MAXCODICE " +
-                "FROM Utenti";
+            sql = "SELECT MAX(CodLibro) AS MAXCODICE " +
+                "FROM Libri";
 
             try
             {
@@ -115,7 +111,7 @@ namespace Biblioteca
             }
 
             return nuovoCodice;
-        }*/
+        }
 
         private void clearDati()
         {
@@ -128,6 +124,8 @@ namespace Biblioteca
             _anno = 0;
             _codGenere = 0;
         }
+
+
 
         private bool verifica()
         {
@@ -168,8 +166,6 @@ namespace Biblioteca
         /***************************/
         public void getDati()
         {
-            int I;
-
             clearDati();
             tabellaLibri.Clear();
 
@@ -192,7 +188,7 @@ namespace Biblioteca
             catch (Exception e)
             {
                 _codice = -1;
-                MessageBox.Show("Attenzione tqisha ropt!!" + e.Message);
+                MessageBox.Show("Attenzione!!" + e.Message);
             }
         }
 
@@ -211,6 +207,7 @@ namespace Biblioteca
             sql = "SELECT * " +
                 "FROM Libri " +
                 "WHERE ValLibro IN " + strValidita;
+
             try
             {
                 tabellaLibri = sqlLibro.eseguiQuery(sql, CommandType.Text);
@@ -220,20 +217,43 @@ namespace Biblioteca
                 MessageBox.Show("Attenzione !!" + e.Message);
             }
 
+            return tabellaLibri;
+        }
+
+        public DataTable disponibili()
+        {
+
+            tabellaLibri.Clear();
+
+            sql = "SELECT * " +
+                "FROM Libri " +
+                "WHERE ValLibro =' '  AND NOT InPrestitoLibro = 'P'";
+
+            try
+            {
+                tabellaLibri = sqlLibro.eseguiQuery(sql, CommandType.Text);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Attenzione !!" + e.Message);
+            }
 
             return tabellaLibri;
         }
 
+
+
+
         public DataTable prestati()
         {
-            string strValidita = "('P')";
+
 
             tabellaLibri.Clear();
 
-
-            sql = "SELECT  CodLibro, TitoloLibro, AutoreLibro, CodGenereLibro, CodISBNLibro, AnnoPubLibro " +
-               "FROM Libri " +
-                "WHERE InPrestitoLibro  IN " + strValidita;
+            sql = "SELECT DISTINCT Libri.CodLibro, Libri.TitoloLibro, Libri.AutoreLibro, Libri.CodGenereLibro, Libri.CodISBNLibro, Libri.AnnoPubLibro, Prestiti.CodPrestito, Prestiti.DataPrestito " +
+               "FROM Libri INNER JOIN Prestiti " +
+                "ON (Prestiti.CodLibroPrestito = Libri.CodLibro AND Prestiti.DataResPrestito IS NULL)" +
+                "ORDER BY Prestiti.DataPrestito ASC";
             try
             {
                 tabellaLibri = sqlLibro.eseguiQuery(sql, CommandType.Text);
@@ -247,6 +267,22 @@ namespace Biblioteca
             return tabellaLibri;
         }
 
+        public void aggiornaPrestito(char prestato)
+        {
+            sql = "UPDATE Libri " +
+                  "SET " +
+                  " InPrestitoLibro = '" + prestato + "' " +
+                  "WHERE CodLibro = '" + _codice + "' ";
+            try
+            {
+                sqlLibro.eseguiNonQuery(sql, CommandType.Text);
+                //MessageBox.Show("Libro modificato con successo.");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Attenzione !!" + e.Message);
+            }
+        }
 
         /***********************************************/
         /* Modifica i dati dell'inquinante selezionato */
@@ -255,18 +291,14 @@ namespace Biblioteca
         {
             bool esito = false;
 
-     
-
-            // Imposto SQL per modificare l'inquinante
-            sql = "UPDATE Inquinanti " +
+            sql = "UPDATE Libri " +
                   "SET " +
                   "AutoreLibro = '" + _autore + "', " +
-                  "TitoloLibro = " + _titolo + ", " +
+                  "TitoloLibro = '" + _titolo + "', " +
                   "CodGenereLibro = '" + _codGenere + "', " +
                   "ImgLibro = '" + _imgLibro + "', " +
-                  "CodISBNLibro = '" + _codISBN + "' " +
-                  "AnnoPubblicazione = '" + _anno + "' " +
-                  "InPrestitoLibro = '" + _prestito + "' " +
+                  "CodISBNLibro = '" + _codISBN + "', " +
+                  "AnnoPubLibro = '" + _anno + "', " +
                   "ValLibro = '" + _val + "' " +
                   "WHERE CodLibro = '" + _codice + "' ";
             try
@@ -297,8 +329,8 @@ namespace Biblioteca
                 //_codice = getNuovoCodice();
 
                 /* Inserisci nella tabella con questi campi questi valori */
-                sql = "INSERT INTO Utenti " +
-                        "AutoreLibro, TitoloLibro,CodGenereLibro, imgLibro, CodISBNLibro,AnnoPubLibro,InPrestitoLibro,CodLibro,ValLibro)" +
+                sql = "INSERT INTO Libri " +
+                        "(AutoreLibro, TitoloLibro,CodGenereLibro, imgLibro, CodISBNLibro,AnnoPubLibro,InPrestitoLibro,ValLibro) " +
                         "VALUES(" + "'" + _autore + "'," +
                                     "'" + _titolo + "'," +
                                     " " + _codGenere + "," +
@@ -306,7 +338,6 @@ namespace Biblioteca
                                     "'" + _codISBN + "'," +
                                     "'" + _anno + "'," +
                                     "'" + _prestito + "'," +
-                                    "'" + _codice + "'," +
                                     "'" + _val + "')";
                 try
                 {
@@ -316,7 +347,7 @@ namespace Biblioteca
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Attenzione !!" + e.Message);
+                    MessageBox.Show("Attenzione eeeeeeeee!!" + e.Message);
                 }
             }
             else

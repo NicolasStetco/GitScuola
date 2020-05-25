@@ -50,6 +50,7 @@
     <Compile Include="clsGenere.cs" />
     <Compile Include="clsLettore.cs" />
     <Compile Include="clsLibro.cs" />
+    <Compile Include="clsPrestito.cs" />
     <Compile Include="clsUtente.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -69,12 +70,25 @@
     <Compile Include="frmLettori.Designer.cs">
       <DependentUpon>frmLettori.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistrazione.cs">
+    <Compile Include="frmLibri.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegistrazione.Designer.cs">
-      <DependentUpon>frmRegistrazione.cs</DependentUpon>
+    <Compile Include="frmLibri.Designer.cs">
+      <DependentUpon>frmLibri.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrestiti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrestiti.Designer.cs">
+      <DependentUpon>frmPrestiti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSchedaLibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSchedaLibro.Designer.cs">
+      <DependentUpon>frmSchedaLibro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="globals.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -86,8 +100,14 @@
     <EmbeddedResource Include="frmLettori.resx">
       <DependentUpon>frmLettori.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistrazione.resx">
-      <DependentUpon>frmRegistrazione.cs</DependentUpon>
+    <EmbeddedResource Include="frmLibri.resx">
+      <DependentUpon>frmLibri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrestiti.resx">
+      <DependentUpon>frmPrestiti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSchedaLibro.resx">
+      <DependentUpon>frmSchedaLibro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -110,6 +130,35 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

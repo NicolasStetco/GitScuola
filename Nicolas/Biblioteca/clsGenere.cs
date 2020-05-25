@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Windows.Forms;
 
@@ -13,7 +9,7 @@ namespace Biblioteca
         private int _codice;
         private string _nome;
         private char _val;
-       
+
 
         private string sql;
         private adoNetSQL sqlGenere;
@@ -206,7 +202,7 @@ namespace Biblioteca
             if (verifica())
             {
                 // Recupero il nuovo codice Azienda
-               // _codice = getNuovoCodice();
+                // _codice = getNuovoCodice();
 
                 /* Inserisci nella tabella con questi campi questi valori */
                 sql = "INSERT INTO Generi " +

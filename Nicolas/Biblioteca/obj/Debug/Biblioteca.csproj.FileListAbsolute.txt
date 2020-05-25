@@ -8,5 +8,8 @@ C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\obj\Debug\Bibli
 C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\obj\Debug\Biblioteca.exe
 C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\obj\Debug\Biblioteca.pdb
 C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\obj\Debug\Biblioteca.frmHome.resources
-C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\obj\Debug\Biblioteca.frmRegistrazione.resources
 C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\obj\Debug\Biblioteca.frmLettori.resources
+C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\obj\Debug\Biblioteca.frmLibri.resources
+C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\obj\Debug\Biblioteca.frmPrestiti.resources
+C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\obj\Debug\Biblioteca.frmSchedaLibro.resources
+C:\Users\stetc\OneDrive\Desktop\Git\GitScuola\Nicolas\Biblioteca\obj\Debug\Biblioteca.csproj.ResolveComReference.cache

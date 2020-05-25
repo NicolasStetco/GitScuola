@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Biblioteca
 {
+
+
     public partial class frmLogin : Form
     {
+
         public frmLogin()
         {
             InitializeComponent();
@@ -30,35 +26,37 @@ namespace Biblioteca
                 MessageBox.Show("Inserisci la password");
             else if (controllo())
             {
-                //this.Close();
+                //globals.tipoUtente = "gino";
+
                 frmHome f = new frmHome();
-                f.Show(); 
+                f.Show();
+                this.Hide();
             }
             else
-            {
-                MessageBox.Show("Nome utente o password errati");
                 txtLoginUser.Focus();
-            }
-                
+
+
         }
+
 
 
         private bool controllo()
         {
-         
+
             clsUtente utente = new clsUtente("Biblioteca.mdf");
 
             utente.userID = txtLoginUser.Text;
-            utente.pwd = txtLoginPwd.Text; 
+            utente.pwd = txtLoginPwd.Text;
+
+            utente.getDatiFromUserAndPWD();
+
+            globals.tipoUtente = utente.tipo;
+            globals.nomeUtente = utente.nominativo;
 
             return utente.controlloLogin();
 
+
         }
 
-        private void btnRegistrazione_Click(object sender, EventArgs e)
-        {
-            frmRegistrazione r = new frmRegistrazione();
-            r.Show();
-        }
     }
 }

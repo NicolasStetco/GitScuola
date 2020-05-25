@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Biblioteca
@@ -41,7 +36,7 @@ namespace Biblioteca
 
             if (from == 'L')
                 tabellaLettori = lett.lista(' ');
-            else if(chkAggiungiAnnullati.Checked==false)
+            else if (chkAggiungiAnnullati.Checked == false)
                 tabellaLettori = lett.lista(' ');
             else
                 tabellaLettori = lett.lista('A');
@@ -49,14 +44,14 @@ namespace Biblioteca
             dgvElenco.DataSource = tabellaLettori;
             cmbLettori.DataSource = tabellaLettori;
             cmbLettori.ValueMember = "CodLettore";
-            cmbLettori.DisplayMember = "NomeLettore"+" CognomeLettore";
+            cmbLettori.DisplayMember = "NomeLettore" + " CognomeLettore";
             annulla();
 
 
 
             lett.dispose();
 
-            
+
 
         }
 
@@ -89,7 +84,7 @@ namespace Biblioteca
 
             clsLettore l = new clsLettore("Biblioteca.mdf");
 
-            lblCodice.Text = l.getNuovoCodice().ToString();
+            lblCodice.Text = "Codice: " + l.getNuovoCodice().ToString();
             //lblNTessera.Text = l.nuovaTessera();
 
             l.dispose();
@@ -107,20 +102,23 @@ namespace Biblioteca
             {
                 MessageBox.Show("Inserisci il cognome");
                 txtCognome.Focus();
-            }else if (txtNome.Text == string.Empty)
+            }
+            else if (txtNome.Text == string.Empty)
             {
                 MessageBox.Show("Inserisci il nome");
                 txtNome.Focus();
             }
-            else if(txtMail.Text == string.Empty)
+            else if (txtMail.Text == string.Empty)
             {
                 MessageBox.Show("Inserisci la mail");
                 txtMail.Focus();
-            }else if (!(txtMail.Text.Contains('@')))
+            }
+            else if (!(txtMail.Text.Contains('@')))
             {
                 MessageBox.Show("Inserisci la mail nel formato corretto");
                 txtMail.Focus();
-            }else if (txtTessera.Text == string.Empty)
+            }
+            else if (txtTessera.Text == string.Empty)
             {
                 MessageBox.Show("Inserisci il numero tessera");
                 txtTessera.Focus();
@@ -143,7 +141,7 @@ namespace Biblioteca
                         elencoLettori('L');
 
                 }
-                
+
 
                 l.dispose();
             }
@@ -156,10 +154,10 @@ namespace Biblioteca
             clsLettore l = new clsLettore("Biblioteca.mdf");
 
             l.nTessera = lblNTessera.Text;
-            l.codice = Convert.ToInt32(lblCodice.Text);
+            l.codice = Convert.ToInt32(lblCodice.Text.Substring(7));
             l.nome = txtNome.Text;
             l.cognome = txtCognome.Text;
-            l.mail  = txtMail.Text;
+            l.mail = txtMail.Text;
             l.nTessera = "NT2020_" + txtTessera.Text;
 
             if (chkAnnullaValditita.Checked == true)
@@ -187,7 +185,7 @@ namespace Biblioteca
                 if (l.validita == 'A')
                     chkAnnullaValditita.Checked = true;
 
-                lblCodice.Text = l.codice.ToString();
+                lblCodice.Text = "Codice: " + l.codice.ToString();
 
                 l.dispose();
 
@@ -197,6 +195,11 @@ namespace Biblioteca
 
                 chkAnnullaValditita.Enabled = true;
             }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

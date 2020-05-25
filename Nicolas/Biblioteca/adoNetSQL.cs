@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.SqlClient;
-using System.IO;
 
 namespace Biblioteca
 {
@@ -16,8 +12,8 @@ namespace Biblioteca
 
         public SqlCommand cmd;
         public SqlDataAdapter adp;
-		
-		/// <summary>
+
+        /// <summary>
         /// Metodo statico per impostare la connessione
         /// </summary>
         /// <param name="dbName">DataBase rispetto al quale impostare la connessione</param>
@@ -26,7 +22,7 @@ namespace Biblioteca
             string abs = dbName;
             cnString = @"Server=(localdb)\MSSQLLocalDB;attachdbfilename= " + abs + @";Integrated Security=True";                  // 2012
         }
-		
+
 
         /// <summary>
         /// Costruttore
@@ -35,8 +31,8 @@ namespace Biblioteca
         {
             init();
         }
-		
-		/// <summary>
+
+        /// <summary>
         /// Costruttore
         /// </summary>
         /// <param name="dbName">DataBase rispetto al quale impostare la connessione</param>
@@ -45,8 +41,8 @@ namespace Biblioteca
             impostaConnessione(dbName);
             init();
         }
-	
-		/// <summary>
+
+        /// <summary>
         /// Imposta la connessione al dataBase
         /// </summary>
         private void init()
@@ -63,8 +59,8 @@ namespace Biblioteca
             else
                 throw new Exception("ATTENZIONE: Connection String non inizializzata !");
         }
-		
-		/// <summary>
+
+        /// <summary>
         /// Apre la connessione al database se non è già aperta
         /// </summary>
         public void apriConnessione()
@@ -72,8 +68,8 @@ namespace Biblioteca
             if (cn != null && cn.ConnectionString != "" && cn.State == ConnectionState.Closed)
                 cn.Open();
         }
-		
-		/// <summary>
+
+        /// <summary>
         /// Chiude la connessione al database se non è già chiusa
         /// </summary>
         public void chiudiConnessione()
@@ -81,13 +77,13 @@ namespace Biblioteca
             if (cn != null && cn.ConnectionString != "" && cn.State == ConnectionState.Open)
                 cn.Close();
         }
-		
-		/// <summary>
+
+        /// <summary>
         /// Esegue la query passata per parametro
         /// </summary>
         /// <param name="sql">Testo della query SQL</param>
         /// <param name="tipo">Text/Stored Procedure</param>
-		/// <returns>Restituisce l'oggetto DataTable altrimenti va in eccezione</returns>
+        /// <returns>Restituisce l'oggetto DataTable altrimenti va in eccezione</returns>
         public DataTable eseguiQuery(string sql, CommandType tipo)
         {
             DataTable daTable = new DataTable();
@@ -98,8 +94,8 @@ namespace Biblioteca
             this.cmd.Parameters.Clear();
             return daTable;
         }
-		
-		/// <summary>
+
+        /// <summary>
         /// Esegue la query passata per parametro
         /// </summary>
         /// <param name="sql">Testo della query SQL</param>
@@ -115,8 +111,8 @@ namespace Biblioteca
             this.cmd.Parameters.Clear();
             return ris;
         }
-	
-		/// <summary>
+
+        /// <summary>
         /// Esegue la query scalare senza istanziare nessun dataTable
         /// </summary>
         /// <param name="sql">Testo della query SQL</param>
@@ -136,8 +132,8 @@ namespace Biblioteca
             this.cmd.Parameters.Clear();
             return ris;
         }
-		
-		/// <summary>
+
+        /// <summary>
         /// Istanzia un oggetto dataReaderConnection
         /// </summary>
         /// <param name="sql">Testo della query SQL</param>
@@ -151,8 +147,8 @@ namespace Biblioteca
             reader = cmd.ExecuteReader();
             return reader;
         }
-		
-		/// <summary>
+
+        /// <summary>
         /// Deistanzia l'oggetto istanziato con creaLettore
         /// </summary>
         public void chiudiLettore()
@@ -160,8 +156,8 @@ namespace Biblioteca
             chiudiConnessione();
             reader.Dispose();
         }
-		
-		/// <summary>
+
+        /// <summary>
         /// Deistanzia tutti gli oggetti
         /// </summary>
         public void Dispose()

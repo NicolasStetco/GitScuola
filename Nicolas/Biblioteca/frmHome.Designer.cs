@@ -35,8 +35,6 @@
             this.prestitiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.areaRiservataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestioneLibriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestioneUtentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestioneGeneriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpElencoPrestiti = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -89,19 +87,19 @@
             this.schedaLibroToolStripMenuItem.Name = "schedaLibroToolStripMenuItem";
             this.schedaLibroToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.schedaLibroToolStripMenuItem.Text = "Scheda libro";
+            this.schedaLibroToolStripMenuItem.Click += new System.EventHandler(this.schedaLibroToolStripMenuItem_Click);
             // 
             // prestitiToolStripMenuItem
             // 
             this.prestitiToolStripMenuItem.Name = "prestitiToolStripMenuItem";
             this.prestitiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.prestitiToolStripMenuItem.Text = "Prestiti";
+            this.prestitiToolStripMenuItem.Click += new System.EventHandler(this.prestitiToolStripMenuItem_Click);
             // 
             // areaRiservataToolStripMenuItem
             // 
             this.areaRiservataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestioneLibriToolStripMenuItem,
-            this.gestioneUtentiToolStripMenuItem,
-            this.gestioneGeneriToolStripMenuItem});
+            this.gestioneLibriToolStripMenuItem});
             this.areaRiservataToolStripMenuItem.Name = "areaRiservataToolStripMenuItem";
             this.areaRiservataToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
             this.areaRiservataToolStripMenuItem.Text = "Area riservata";
@@ -109,20 +107,9 @@
             // gestioneLibriToolStripMenuItem
             // 
             this.gestioneLibriToolStripMenuItem.Name = "gestioneLibriToolStripMenuItem";
-            this.gestioneLibriToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.gestioneLibriToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.gestioneLibriToolStripMenuItem.Text = "Gestione libri";
-            // 
-            // gestioneUtentiToolStripMenuItem
-            // 
-            this.gestioneUtentiToolStripMenuItem.Name = "gestioneUtentiToolStripMenuItem";
-            this.gestioneUtentiToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
-            this.gestioneUtentiToolStripMenuItem.Text = "Gestione utenti";
-            // 
-            // gestioneGeneriToolStripMenuItem
-            // 
-            this.gestioneGeneriToolStripMenuItem.Name = "gestioneGeneriToolStripMenuItem";
-            this.gestioneGeneriToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
-            this.gestioneGeneriToolStripMenuItem.Text = "Gestione generi";
+            this.gestioneLibriToolStripMenuItem.Click += new System.EventHandler(this.gestioneLibriToolStripMenuItem_Click);
             // 
             // grpElencoPrestiti
             // 
@@ -215,9 +202,8 @@
             this.lblDataPrestito.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataPrestito.Location = new System.Drawing.Point(966, 521);
             this.lblDataPrestito.Name = "lblDataPrestito";
-            this.lblDataPrestito.Size = new System.Drawing.Size(52, 17);
+            this.lblDataPrestito.Size = new System.Drawing.Size(0, 17);
             this.lblDataPrestito.TabIndex = 7;
-            this.lblDataPrestito.Text = "label2";
             // 
             // lblTitolo
             // 
@@ -263,7 +249,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmHome";
-            this.Text = "Home";
+            this.Text = "Home - ";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.chiudiTutto);
             this.Load += new System.EventHandler(this.frmHome_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -284,7 +271,6 @@
         private System.Windows.Forms.ToolStripMenuItem schedaLibroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem areaRiservataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestioneLibriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestioneUtentiToolStripMenuItem;
         private System.Windows.Forms.GroupBox grpElencoPrestiti;
         private System.Windows.Forms.DataGridView dgvPrestati;
         private System.Windows.Forms.Label lblAutore;
@@ -293,7 +279,6 @@
         private System.Windows.Forms.Label lblTitolo;
         private System.Windows.Forms.PictureBox ptbCopertina;
         private System.Windows.Forms.ComboBox cmbPrestatiNONVISIBILE;
-        private System.Windows.Forms.ToolStripMenuItem gestioneGeneriToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

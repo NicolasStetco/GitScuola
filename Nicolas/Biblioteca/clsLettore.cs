@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Windows.Forms;
 
@@ -70,7 +66,7 @@ namespace Biblioteca
             sqlLettore.Dispose();
         }
 
-        
+
         public string nuovaTessera()
         {
             string nuovoCodice = string.Empty;
@@ -105,29 +101,29 @@ namespace Biblioteca
             _val = ' ';
         }
 
-        
-       public int getNuovoCodice()
-       {
-           int nuovoCodice = -1;
-           string risultato = string.Empty;
+
+        public int getNuovoCodice()
+        {
+            int nuovoCodice = -1;
+            string risultato = string.Empty;
 
 
-           sql = "SELECT MAX(CodLettore) AS MAXCODICE " +
-               "FROM Lettori";
+            sql = "SELECT MAX(CodLettore) AS MAXCODICE " +
+                "FROM Lettori";
 
-           try
-           {
-               risultato = sqlLettore.eseguiScalar(sql, CommandType.Text);
-               nuovoCodice = Convert.ToInt32(risultato) + 1;
+            try
+            {
+                risultato = sqlLettore.eseguiScalar(sql, CommandType.Text);
+                nuovoCodice = Convert.ToInt32(risultato) + 1;
 
-           }
-           catch (Exception e)
-           {
-               MessageBox.Show("ATTENZIONE: " + e.Message);
-           }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("ATTENZIONE: " + e.Message);
+            }
 
-           return nuovoCodice;
-       }
+            return nuovoCodice;
+        }
 
         private bool verifica()
         {
@@ -161,7 +157,7 @@ namespace Biblioteca
             return esito;
         }
 
-        
+
         /***************************/
         /* Recupera singola Entità */
         /***************************/
